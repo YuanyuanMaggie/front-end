@@ -1,0 +1,41 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container{
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.form-control{
+    width: 100%;
+    display: flex;
+    padding: 10px;
+}
+
+.form-label{
+    text-align: right;
+    width:20%;
+    padding-right: 15px;
+}
+
+.form-group{
+    width: 80%;
+}
+.form-input{
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 8px;
+    border-style: solid;
+}
+.form-button{
+    background-color: #337ab7;
+    color: white;
+    float:right;
+    border:none;
+    padding:8px;
+    border-radius: 4px;
+}
