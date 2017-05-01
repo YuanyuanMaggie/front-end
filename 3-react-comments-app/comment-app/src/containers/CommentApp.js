@@ -1,7 +1,7 @@
 import React from 'react'
 // import CommentList from './CommentList'
 import CommentInputContainer from './CommentInputContainer'
-
+import CommentListContainer from './CommentListContainer'
 class CommentApp extends React.Component{
 
     render(){
@@ -10,7 +10,7 @@ class CommentApp extends React.Component{
                 <h1> Comment App on React</h1>
                 <p> Day 3 April 28. </p>
                 <CommentInputContainer/>
-                
+                <CommentListContainer />
             </div>
         )
     }

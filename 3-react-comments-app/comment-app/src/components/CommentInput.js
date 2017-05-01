@@ -27,7 +27,7 @@ class CommentInput extends React.Component {
             const comment = {
                 username: this.state.username,
                 content: this.state.content,
-                createdTime: new Date()
+                createdTime: +Date.now()
             }
             this.props.onSubmitComment(comment);
             this.setState({content: ''})

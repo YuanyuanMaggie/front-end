@@ -1,24 +1,19 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import Comment from './components/Comment'
+import Comment from '../components/Comment'
 import PropTypes from 'prop-types'
+import {delComment} from '../reducers/index'
 
-class CommentList extends React.Component{
+class CommentListContainer extends React.Component{
     static propTypes = {
         comments: PropTypes.array,
-        onDeleteComment: PropTypes.func,
-        initComment: PropTypes.func
+        onDeleteComment: PropTypes.func
     }
-
-    componentWillMount() {
-        if(this.props.initComment){
-            this.props.initComment();
-        }
-    }
+    
     renderList(){
         if(this.props.comments){
             return this.props.comments.map((comment, i) => (
-                <Comment key={i} comment={comment} onDeleteComment={this.handleDelete.bind(this) index={i}} />
+                <Comment key={i} comment={comment} onDeleteComment={this.handleDelete.bind(this)} index={i} />
             ))
         }
     }
@@ -30,10 +25,28 @@ class CommentList extends React.Component{
     }
 
     render(){
-        return 
+        return (
         <div className='commentList'>
-            {this.renderList.bind(this)}
+            {this.renderList()}
         </div>
+        )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        comments: state.comments
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onDeleteComment: (index) => {
+            dispatch(delComment(index))
+        }
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentListContainer)
 

@@ -9,11 +9,14 @@ class Comment extends React.Component{
 
     componentWillMount(){
         this._updateTimeString()
-        this._timer = setInterval(this._updateTimeString.bind(this), 5000)
+        this._timer = setInterval(
+            this._updateTimeString.bind(this),
+            5000
+            )
     }
 
-    componentWillUnMount(){
-        clearInterval(this._timer);
+    componentWillUnmount () {
+        clearInterval(this._timer)
     }
 
     _updateTimeString(){
