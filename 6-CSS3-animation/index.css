@@ -30,57 +30,23 @@
     to {transform: rotate(-360deg);}
 }
 
-@keyframes circle {
-    from {transform: rotate(0deg);}
-    25% {transform: rotate(0deg);}
-    50% {transform: rotate(-180deg);z-index: 3}
-    75% {transform: rotate(-180deg);z-index: 3}
-    to {transform: rotate(-360deg);}
+@keyframes hide {
+    0% { opacity: 1;}
+    50%, 100% {opacity: 0;}
 }
 
-@keyframes circleHalf {
-    from {transform: rotate(0deg);}
-    25% {transform: rotate(-180deg);}
-    50% {transform: rotate(-180deg);z-index: 3}
-    75% {transform: rotate(-180deg);z-index: 3}
-    to {transform: rotate(-360deg);}
+@keyframes show {
+    0% { opacity: 0;}
+    50%, 100% {opacity: 1;}
 }
 
-@keyframes circleHalf2 {
-    from {transform: rotate(0deg);z-index:3}
-    25% {transform: rotate(0deg);z-index: 3}
-    50% {transform: rotate(0deg);z-index: 2}
-    75% {transform: rotate(-180deg);z-index: 2}
-    to {transform: rotate(-360deg);z-index: 3}
+.light-color {
+    background-color: rgb(251,139,189);
 }
 
-.half-circle{
-    width: 0;
-    height: 0;
-    border-radius: 50px;
-    position: absolute;
-    left:100px;
-    top:100px;
-    border-width: 50px;
-    border-style: solid;
+.dark-color {
+    background-color: rgb(255, 41, 140);
 }
-
-
-.circle {
-    border-color: rgb(251,139,189) rgb(251,139,189) rgb(255, 41, 140) rgb(255, 41, 140);
-    animation: rotation 0.8s linear infinite;
-}
-
-.light-red {
-    border-color: rgb(251,139,189) rgb(251,139,189) transparent transparent;
-    animation: circleHalf 0.88s linear infinite;
-}
-
-.dark-red {
-    border-color: rgb(255, 41, 140) rgb(255, 41, 140) transparent transparent;
-    animation: circleHalf2 0.8s linear infinite;
-}
-
 
 .out-circle {
     width: 140px;
@@ -88,8 +54,56 @@
     border: 2px solid rgb(255, 41, 140);
     border-top-color:transparent;
     border-radius: 70px;
-    animation: rotation 8s linear infinite;
+    animation: rotation 3s linear infinite;
     position: absolute;
     left: 80px;
     top: 80px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    border-radius: 100px;
+}
+
+.half-c {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+}
+
+.in-circle1{
+    opacity: 1;
+    animation: hide 6s steps(1, end) infinite;
+}
+
+.bottom {
+    border-radius: 50px 0 0 50px;
+    transform-origin: right center;
+    animation: rotation 3s infinite linear; 
+    left: 0; top: 0;
+}
+
+.middle {
+    border-radius: 0 50px 50px 0;
+    animation: hide 3s steps(1, end) infinite;
+    left: 50%;
+    top: 0;
+    opacity: 1;
+}
+
+.top {
+    border-radius: 50px 0 0 50px;
+    animation: show 3s steps(1, end) infinite;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.in-circle2{
+    opacity: 0;
+    animation: show 6s steps(1, end) infinite;
 }
