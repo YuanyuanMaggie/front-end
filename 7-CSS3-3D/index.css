@@ -1,0 +1,70 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ @keyframes rotate-frame {
+        0% {
+            transform: rotateX(-20deg) rotateY(0deg);
+        }
+        10% {
+            transform: rotateX(-20deg) rotateY(36deg);
+        }
+        20% {
+            transform: rotateX(-20deg) rotateY(72deg);
+        }
+        30% {
+            transform: rotateX(-20deg) rotateY(108deg);
+        }
+        40% {
+            transform: rotateX(-20deg) rotateY(144deg);
+        }
+        50% {
+            transform: rotateX(-20deg) rotateY(180deg);
+        }
+        60% {
+            transform: rotateX(-20deg) rotateY(216deg);
+        }
+        70% {
+            transform: rotateX(-20deg) rotateY(252deg);
+        }
+        80% {
+            transform: rotateX(-20deg) rotateY(288deg);
+        }
+        90% {
+            transform: rotateX(-20deg) rotateY(324deg);
+        }
+        100% {
+            transform: rotateX(-20deg) rotateY(360deg);
+        }
+ }
+.rotate-map {
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    transform-style: preserve-3d;
+    transform:rotateX(-10deg);
+    animation: rotate-frame 10s linear infinite;
+}
+
+.rotate-map img{
+    width: 200px;
+    height: 118px;
+    top: 160px;
+    left: 300px;
+    position: absolute;
+    -webkit-box-reflect:below 3px -webkit-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5));
+    transform: rotateY(0deg);
+}
+
+img:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+img:nth-child(2) { transform: rotateY(40deg) translateZ(400px); }
+img:nth-child(3) { transform: rotateY(80deg) translateZ(400px); }
+img:nth-child(4) { transform: rotateY(120deg) translateZ(400px); }
+img:nth-child(5) { transform: rotateY(160deg) translateZ(400px); }
+img:nth-child(6) { transform: rotateY(200deg) translateZ(400px); }
+img:nth-child(7) { transform: rotateY(240deg) translateZ(400px); }
+img:nth-child(8) { transform: rotateY(280deg) translateZ(400px); }
+img:nth-child(9) { transform: rotateY(320deg) translateZ(400px); }
