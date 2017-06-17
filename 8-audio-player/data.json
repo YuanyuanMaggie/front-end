@@ -1,0 +1,18 @@
+{
+    "cd_name": "My Faves",
+    "info": [
+       {
+           "name": "Sleep Alone",
+           "from": "Eason",
+           "src1": "music/Sleep-Alone.mp3",
+           "img": "imgs/dog1.jpg"
+        },
+        {
+            "name": "Carefree",
+            "from": "Kevin MacLeod",
+            "src1": "music/Carefree.mp3",
+            "img": "imgs/dog2.jpg"
+        }
+    ]
+}
+
