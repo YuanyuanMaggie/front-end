@@ -55,9 +55,15 @@ module.exports = {
         })
     ],
     devServer: {
+        proxy:{
+            'api': {
+                target: 'http://localhost: 3000',
+                secure: false
+            }
+        },
         contentBase: "./public",
-        historyApiFallback: true,
-        inline: true,
-        hot: true
+        historyApiFallback: true, // no redirect
+        inline: true, // refresh in time
+        hot: true // HotModuleReplacementPlugin
     }
 }

@@ -1,5 +1,6 @@
 # A basic webpack for making react app
 
-## start to use it
+## install packages
 `npm install`
+## start it!
 `npm start`
