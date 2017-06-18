@@ -174,3 +174,5 @@ Promise.race([
     console.log(`Race Total time for it is: ${Date.now() - startDate} ms`);
 });
 ```
+
+Examples come from https://github.com/azu/promises-book

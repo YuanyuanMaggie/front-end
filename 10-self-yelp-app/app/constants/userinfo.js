@@ -1,0 +1,3 @@
+const USERINFO_UPDATE = 'USERINFO_UPDATE';
+
+export default USERINFO_UPDATE;

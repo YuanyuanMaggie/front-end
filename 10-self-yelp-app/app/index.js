@@ -1,17 +1,19 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { Provider} from 'react-redux'
+import RouteMap from './router/routeMap'
 
 import './static/css/common.less'
 
-class Hello extends React.Component {
-    render() {
-        return (
-            <p>hello world as usual</p>
-        )
-    }
-}
+import {createStore} from 'redux'
+import rootReducer from './reducers'
+
+const store = createStore(rootReducer);
+
 
 render(
-    <Hello/>,
+    <Provider store={store}>
+        <RouteMap/>
+    </Provider>,
     document.getElementById('root')
 )
