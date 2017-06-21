@@ -1,6 +1,9 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-
+import HomeHeader from '../../components/HomeHeader'
+import {connect} from 'react-redux'
+import Category from '../../components/Category'
+import Ad from './Ad'
 class Home extends React.Component {
     constructor(){
         super();
@@ -9,10 +12,28 @@ class Home extends React.Component {
     render(){
         return (
             <div>
-                <h1>Home</h1>
+                <HomeHeader cityName="New York"/>
+               {/*<HomeHeader cityName={this.props.userinfo.cityName}/>*/}
+               <Category/>
+               <Ad/>
             </div>
         )
     }
 }
 
-module.exports = Home
+function mapStateToProps(state) {
+    return {
+        userinfo: state.userinfo
+    }
+}
+
+function mapDisptachToProps(dispatch){
+    return {
+
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDisptachToProps
+)(Home)
