@@ -7,7 +7,6 @@ export function get(url) {
         header: {
             'Accept': 'application/json, text/plain, */*'
         }
-    });
-
+    })
     return result;
 }
