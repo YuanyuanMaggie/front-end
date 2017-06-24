@@ -1,32 +1,32 @@
 module.exports = [
     {
         title: '50% Summer',
-        img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016191639092-2000037796.png',
+        img: 'http://via.placeholder.com/100x100',
         link: '/'
     },
     {
         title: 'Going Abroad',
-        img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016191648124-298129318.png',
+        img: 'http://via.placeholder.com/100x100',
         link: '/'
     },
     {
         title: 'Cool Car',
-        img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016191653983-1962772127.png',
+        img: 'http://via.placeholder.com/100x100',
         link: '/'
     },
     {
         title: 'Pinano',
-        img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016191700420-1584459466.png',
+        img: 'http://via.placeholder.com/100x100',
         link: '/'
     },
     {
         title: 'Movies',
-        img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016191706733-367929553.png',
+        img: 'http://via.placeholder.com/100x100',
         link: '/'
     },
     {
         title: 'Travel',
-        img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016191713186-495002222.png',
+        img: 'http://via.placeholder.com/100x100',
         link: '/'
     }
 ]

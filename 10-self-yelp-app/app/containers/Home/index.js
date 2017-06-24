@@ -4,6 +4,7 @@ import HomeHeader from '../../components/HomeHeader'
 import {connect} from 'react-redux'
 import Category from '../../components/Category'
 import Ad from './Ad'
+import Recos from './Recos'
 class Home extends React.Component {
     constructor(){
         super();
@@ -12,10 +13,11 @@ class Home extends React.Component {
     render(){
         return (
             <div>
-                <HomeHeader cityName="New York"/>
+                <HomeHeader cityName={this.props.userinfo.cityName}/>
                {/*<HomeHeader cityName={this.props.userinfo.cityName}/>*/}
                <Category/>
                <Ad/>
+               <Recos cityName="New York"/>
             </div>
         )
     }

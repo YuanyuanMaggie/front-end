@@ -1,6 +1,5 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-// import HomeAd from '../../../components/HomeAd/index'
 import { getAdData } from '../../fetch/home/home'
 import HomeAd from '../../components/HomeAd'
 
@@ -30,7 +29,6 @@ class Ad extends React.Component {
         }).then(json => {
             const data = json
             if (data.length) {
-                console.log(data)
                 this.setState({
                     data: data
                 })
