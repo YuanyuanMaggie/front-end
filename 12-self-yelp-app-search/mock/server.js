@@ -23,6 +23,16 @@ router.get('/api/homelist/:city/:page', function (ctx, next) {
     ctx.body = homeListData;
 })
 
+const homeCategories = require('./home/category.js')
+router.get('/api/homecategories', function(ctx, next) {
+    ctx.body = homeCategories
+})
+
+const cities = require('./city/cityList.js')
+router.get('/api/citylist', function(ctx, next){
+    ctx.body = cities
+})
+
 app.use(router.routes())
    .use(router.allowedMethods());
 app.listen(3000);

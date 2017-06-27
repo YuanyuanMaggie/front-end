@@ -12,8 +12,7 @@ import NotFound from '../containers/404'
 class RouterMap extends React.Component {
     render(){
         return (
-            <HashRouter>
-               <App>
+            <App>
                 <Switch>
                     <Route exact path='/' component={Home}/>
                     <Route path='/city' component={City}/>
@@ -22,8 +21,7 @@ class RouterMap extends React.Component {
                     <Route path='/detail/:id' component={Detail}/>
                     <Route path='*' component={NotFound}/>
                 </Switch>
-               </App>
-            </HashRouter>
+            </App>
         )
     }
 }

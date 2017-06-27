@@ -9,3 +9,13 @@ export function getListData(city, page) {
     const result = get('/api/homelist/' + encodeURIComponent(city) + '/' + page)
     return result
 }
+
+export function getCatList() {
+    const result = get('/api/homecategories')
+    return result;
+}
+
+export function getCities() {
+    const result = get('/api/citylist')
+    return result;
+}

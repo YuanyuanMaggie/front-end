@@ -2,7 +2,7 @@ import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import HomeHeader from '../../components/HomeHeader'
 import {connect} from 'react-redux'
-import Category from '../../components/Category'
+import Category from './Category'
 import Ad from './Ad'
 import Recos from './Recos'
 class Home extends React.Component {
@@ -14,7 +14,6 @@ class Home extends React.Component {
         return (
             <div>
                 <HomeHeader cityName={this.props.userinfo.cityName}/>
-               {/*<HomeHeader cityName={this.props.userinfo.cityName}/>*/}
                <Category/>
                <Ad/>
                <Recos cityName="New York"/>
