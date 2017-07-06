@@ -7,7 +7,8 @@ module.exports = {
             subTitle: 'Burger King Burger King',
             price: '28',
             distance: '120m',
-            mumber: '389'
+            mumber: '389',
+            id: Math.random().toString().slice(2)
         },
         {
             img: 'http://via.placeholder.com/100x100',
@@ -15,7 +16,8 @@ module.exports = {
             subTitle: '[Chelsea]Buffet',
             price: '98',
             distance: '140m',
-            mumber: '689'
+            mumber: '689',
+            id: Math.random().toString().slice(2)
         },
         {
             img: 'http://via.placeholder.com/100x100',
@@ -23,7 +25,8 @@ module.exports = {
             subTitle: 'For you only choose',
             price: '1980',
             distance: '160',
-            mumber: '106'
+            mumber: '106',
+            id: Math.random().toString().slice(2)
         },
         {
             img: 'http://via.placeholder.com/100x100',
@@ -31,7 +34,8 @@ module.exports = {
             subTitle: 'Try free and take photos',
             price: '2899',
             distance: '160',
-            mumber: '58'
+            mumber: '58',
+            id: Math.random().toString().slice(2)
         },
         {
             img: 'http://via.placeholder.com/100x100',
@@ -39,7 +43,8 @@ module.exports = {
             subTitle: 'Free combo for two',
             price: '0',
             distance: '160',
-            mumber: '1426'
+            mumber: '1426',
+            id: Math.random().toString().slice(2)
         }
     ]
 }

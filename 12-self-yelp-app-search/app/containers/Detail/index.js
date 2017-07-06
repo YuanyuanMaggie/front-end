@@ -1,15 +1,21 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-
+import Comment from './Comment'
+import Header from '../../components/Header'
+import Info from './Info'
+import './style.less'
 class Details extends React.Component {
     constructor(){
         super();
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
     render(){
+        const id = this.props.match.params.id || 0
         return (
             <div>
-                <h1>Details</h1>
+                <Header title='Details'/>
+                <Info id={id} />
+                <Comment id={id}/>
             </div>
         )
     }

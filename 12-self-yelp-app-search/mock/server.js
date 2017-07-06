@@ -33,6 +33,60 @@ router.get('/api/citylist', function(ctx, next){
     ctx.body = cities
 })
 
+var searchListData = require('./search/data.js')
+router.get('/api/search/:page/:city/:category/:keyword', function (ctx, next) {
+    const params = ctx.params
+    const paramsPage = params.page
+    const paramsCity = params.city
+    const paramsCategory = params.category
+    const paramsKeyword = params.keyword
+
+    console.log('Page is:' + paramsPage)
+    console.log('City is:' + paramsCity)
+    console.log('Category is:' + paramsCategory)
+    console.log('Keyword is:' + paramsKeyword)
+
+    ctx.body = searchListData
+})
+
+router.get('/api/search/:page/:city/:category', function (ctx, next) {
+    const params = ctx.params
+    const paramsPage = params.page
+    const paramsCity = params.city
+    const paramsCategory = params.category
+
+    console.log('Page is: ' + paramsPage)
+    console.log('City is: ' + paramsCity)
+    console.log('Category is: ' + paramsCategory)
+
+     ctx.body = searchListData
+})
+
+const detailInfo = require('./detail/info.js')
+router.get('/api/detail/info/:id', function (ctx, next) {
+
+    const params = ctx.params
+    const id = params.id
+
+    console.log('Restaurant id: ' + id)
+
+    ctx.body = detailInfo
+})
+
+const detailComment = require('./detail/comment.js')
+router.get('/api/detail/comment/:page/:id', function (ctx, next) {
+
+    const params = ctx.params
+    const page = params.page
+    const id = params.id
+
+    console.log('Restaurant id: ' + id)
+    console.log('Page: ' + page)
+
+    ctx.body = detailComment
+})
+
+
 app.use(router.routes())
    .use(router.allowedMethods());
 app.listen(3000);

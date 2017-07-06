@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import './style.less'
+import SearchInput from '../SearchInput'
 
 const HomeHeader = props => (
     <div id="home-header" className="cf">
@@ -16,7 +17,7 @@ const HomeHeader = props => (
         <div className="search home-header-middle">
             <div className="search-container">
                 <i className="icon-search"></i>
-                <input type="text" placeholder="Search..."/>
+                <SearchInput value=""/>
             </div>
         </div>
     </div>

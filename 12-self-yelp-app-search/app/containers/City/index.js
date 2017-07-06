@@ -2,6 +2,7 @@ import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import CityList from './CityList'
 import Header from '../../components/Header'
+import CurrentCity from '../../components/CurrentCity'
 import LocalStore from '../../util/localStore'
 
 import { hashHistory } from 'react-router'
@@ -19,6 +20,7 @@ class City extends React.Component {
         return (
             <div>
                 <Header title={'City'}/>
+                <CurrentCity cityName={this.props.userinfo.cityName}/>
                 <CityList changeCity={this.changeCity.bind(this)}/>
             </div>
         )

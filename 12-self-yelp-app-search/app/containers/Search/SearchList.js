@@ -1,24 +1,24 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import { getListData } from '../../fetch/home/home'
+import { getSearchData } from '../../fetch/search/search'
 import List from '../../components/List'
 import LoadMore from '../../components/LoadMore'
 
-class Recos extends React.Component {
-    constructor() {
-        super();
-        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
-        this.state = {
+const initialState = {
             data: [],
             hasMore: false,
             isLoadingMore: false,
             page: 0
         }
+class SearchList extends React.Component {
+    constructor() {
+        super();
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
+        this.state = initialState
     }
     render() {
         return (
             <div>
-                <h2 className="home-list-title">Recommendations</h2>
             {
                this.state.data.length?
                <List data={this.state.data}/>
@@ -33,26 +33,19 @@ class Recos extends React.Component {
         )
     }
     componentDidMount() {
-        this.loadFirstData();
+        this.loadMoreFn();
     }
 
-    loadFirstData(){
-        this.setState({
-            isLoadingMore: true
-        })
-
-        const cityName = this.props.cityName
-        const result = getListData(cityName, 0)
-        this.resultHandle(result)
-    }
     loadMoreFn(){
         this.setState({
             isLoadingMore: true
         })
 
         const cityName = this.props.cityName
+        const keyword = this.props.keyword || ''
+        const category = this.props.category || 'all'
         const page = this.state.page
-        const result = getListData(cityName, page)
+        const result = getSearchData(page, cityName, category, keyword)
         this.resultHandle(result)
 
         this.setState({
@@ -74,10 +67,20 @@ class Recos extends React.Component {
             })
         }).catch( ex => {
             if (__DEV__) {
-                console.error(' Error happen when load recommendations. ', ex.message )
+                console.error(' Error happen when load Search List ', ex.message )
             }
         })
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        const keyword = this.props.keyword
+        const category = this.props.category
+        if(keyword === prevProps.keyword && category === prevProps.category) {
+            return
+        }
+        this.setState(initialState)
+        this.loadMoreFn()
+    }
 }
 
-export default Recos
+export default SearchList

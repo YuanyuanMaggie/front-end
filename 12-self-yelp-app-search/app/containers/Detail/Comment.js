@@ -1,10 +1,10 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import { getListData } from '../../fetch/home/home'
-import List from '../../components/List'
+import { getCommentData } from '../../fetch/detail/detail'
+import CommentList from '../../components/CommentList'
 import LoadMore from '../../components/LoadMore'
 
-class Recos extends React.Component {
+class Comment extends React.Component {
     constructor() {
         super();
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -17,11 +17,11 @@ class Recos extends React.Component {
     }
     render() {
         return (
-            <div>
-                <h2 className="home-list-title">Recommendations</h2>
+            <div className="detail-comment-subpage">
+                <h2>Comments</h2>
             {
                this.state.data.length?
-               <List data={this.state.data}/>
+               <CommentList data={this.state.data}/>
                :<span>Loading</span>
             }
             {
@@ -41,8 +41,8 @@ class Recos extends React.Component {
             isLoadingMore: true
         })
 
-        const cityName = this.props.cityName
-        const result = getListData(cityName, 0)
+        const id = this.props.id
+        const result = getCommentData(0, id)
         this.resultHandle(result)
     }
     loadMoreFn(){
@@ -50,9 +50,9 @@ class Recos extends React.Component {
             isLoadingMore: true
         })
 
-        const cityName = this.props.cityName
+        const id = this.props.id
         const page = this.state.page
-        const result = getListData(cityName, page)
+        const result = getCommentData(page, id)
         this.resultHandle(result)
 
         this.setState({
@@ -80,4 +80,4 @@ class Recos extends React.Component {
     }
 }
 
-export default Recos
+export default Comment
