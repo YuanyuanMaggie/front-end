@@ -5,7 +5,6 @@ import Header from '../../components/Header'
 import CurrentCity from '../../components/CurrentCity'
 import LocalStore from '../../util/localStore'
 
-import { hashHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as userInfoActionsFromOtherFile from '../../actions/userinfo'

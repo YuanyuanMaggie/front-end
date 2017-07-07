@@ -43,7 +43,6 @@ class Login extends React.Component {
     }
     loginHandle(username) {
         const actions = this.props.userInfoActions
-
         let userinfo = this.props.userinfo
         userinfo.username = username
         actions.update(userinfo)
@@ -53,7 +52,7 @@ class Login extends React.Component {
         const params = this.props.match.params
         const router = params.router
         if(router) {
-             createHashHistory().push('/'+ router)
+             createHashHistory().push(decodeURIComponent(router))
         } else {
              createHashHistory().push('/user')
         }

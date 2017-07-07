@@ -3,6 +3,8 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import Comment from './Comment'
 import Header from '../../components/Header'
 import Info from './Info'
+import BuyAndSave from './BuyAndSave'
+
 import './style.less'
 class Details extends React.Component {
     constructor(){
@@ -15,6 +17,7 @@ class Details extends React.Component {
             <div>
                 <Header title='Details'/>
                 <Info id={id} />
+                <BuyAndSave id={id}/>
                 <Comment id={id}/>
             </div>
         )
