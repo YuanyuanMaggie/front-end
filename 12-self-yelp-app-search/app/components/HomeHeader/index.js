@@ -12,7 +12,9 @@ const HomeHeader = props => (
             </Link>
         </div>
         <div className="fr home-header-right">
+            <Link to="/user">
             <i className="icon-user"></i>
+            </Link>
         </div>
         <div className="search home-header-middle">
             <div className="search-container">

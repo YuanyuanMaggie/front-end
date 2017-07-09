@@ -86,6 +86,23 @@ router.get('/api/detail/comment/:page/:id', function (ctx, next) {
     ctx.body = detailComment
 })
 
+const orderHistory = require('./orderhistory/orderhistory.js')
+router.get('/api/orderhistory/:username', function (ctx, next) {
+    const params = ctx.params
+    const username = params.username
+
+    console.log('username is: ', username)
+    ctx.body = orderHistory
+})
+
+router.post('/api/submitComment', function (ctx, next) {
+
+    console.log('submit comment succesfully')
+    ctx.body = {
+        errno: 0,
+        msg: 'ok'
+    }
+})
 
 app.use(router.routes())
    .use(router.allowedMethods());
